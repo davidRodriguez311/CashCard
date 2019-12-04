@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="uk-container" *ngIf = 'credit'>
+            <div id="return">
+                    <h6>Add Credit Card/<a routerLink = "/credits/{{idUser}}">Return</a></h6>
+            </div>
+        <form #creditForm = 'ngForm' (ngSubmit) = 'onSubmit(creditForm)'>
+                <fieldset class="uk-fieldset" id="legend">
+                    <legend class="uk-legend" id="title">{{title}}</legend>
+            
+                    <div class="uk-margin">
+                        <input class="uk-input" name = "ncard" #ncard= "ngModel" type="number" placeholder="N card" [(ngModel)] = 'credit.ncard'>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <input class="uk-input" name = "codecvc" #codecvc= "ngModel" type="number" placeholder="codecvc" [(ngModel)] = 'credit.codecvc'>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <input class="uk-input" name = "money" #money= "ngModel" type="number" placeholder="money" [(ngModel)] = 'credit.money'>
+                    </div>
+
+                    <button class="uk-button uk-button-secondary uk-width-1-1" >Guardar</button>
+                </fieldset>
+            </form>        
+    </div>
+</body>
+</html>

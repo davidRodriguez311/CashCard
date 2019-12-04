@@ -1,0 +1,61 @@
+#containerTarget{
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#targetUser{
+    border-radius: 5px;
+    border: rgb(223, 223, 223) 1px solid;
+}
+
+#img{
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+#containerimage{
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+#h4{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#footer{
+    padding: 8px 30px;
+}
+
+#title{
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
+}
+
+#li{
+    padding: 8px 20px;
+}
+
+#cardBody{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+#ul{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#list{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5px;
+}

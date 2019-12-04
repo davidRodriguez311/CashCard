@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="uk-inline">
+        <button class="uk-button uk-button-primary" type="button" id="btnMenu">Menú</button>
+        <ul uk-dropdown="mode: click" id="cardMenu">
+            <a [routerLink] = "['/addUser']" style="color: black">Register User</a>
+            <hr />
+            <a [routerLink] = "['/home']" style="color: black">Home</a>
+            <hr />
+          </ul>
+    </div>
+</body>
+</html>

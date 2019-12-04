@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="uk-container" *ngIf = 'user'>
+        <div id="return">
+            <h6>Details/<a routerLink = "/home">Return</a></h6>
+        </div>
+    <div id="cardGeneral">
+        <div class="uk-card uk-card-default" id="cardDefault">
+            <div class="uk-card-media-top" id="cardImage">
+                <img src="{{url + 'getImage/' + user.image}}" alt="imageUser" id="imageUser">
+            </div>
+            <div class="uk-card-body" id="cardBody"> 
+                    <ul class="uk-list uk-list-divider">
+                            <li>Names: {{user.name}} {{user.lastname}}</li>
+                            <li>N Document: {{user.document}}</li>
+                            <li>Password: {{user.password}}</li>
+                            <li>Email: {{user.Email}}</li>
+                            <li>Password: {{user.password}}</li>
+                            <li>Role: {{user.role}}</li>
+                        </ul>
+            </div>
+            
+            <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" id="btn" [routerLink] = "['/credits/' + user.id]">Credit Cards</button>          
+            <div *ngIf = "confirm == false">
+                    <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="btn" [routerLink] = "['/editUser/' + user.id]">Edit</button>          
+                    <button class="uk-button uk-button-danger uk-width-1-1 uk-margin-small-bottom" id="btn" (click) = "setConfirm(true)">Delete</button>
+            </div>
+            <div *ngIf = "confirm == true">
+                    Eliminar registro definitivamente?
+                    <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" id="btn" (click) = "setConfirm(false)">Cancel</button>          
+                    <button class="uk-button uk-button-danger uk-width-1-1 uk-margin-small-bottom" id="btn" (click) = "deleteUser(user.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

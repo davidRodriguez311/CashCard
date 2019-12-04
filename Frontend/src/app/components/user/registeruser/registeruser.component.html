@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="uk-container" *ngIf = 'user'>
+            <div id="return">
+                    <h6>Register User/<a routerLink = "/home">Return</a></h6>
+            </div>
+        <form #userForm = 'ngForm' (ngSubmit) = 'onSubmit(userForm)'>
+                <fieldset class="uk-fieldset" id="legend">
+                    <legend class="uk-legend" id="title">{{title}}</legend>
+            
+                    <div class="uk-margin">
+                        <input class="uk-input" name = "name" #name= "ngModel" type="text" placeholder="Nombre" [(ngModel)] = 'user.name'>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <input class="uk-input" name = "lastname" #lastname= "ngModel" type="text" placeholder="Apellido" [(ngModel)] = 'user.lastname'>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <input class="uk-input" name = "document" #document= "ngModel" type="number" placeholder="Documento" [(ngModel)] = 'user.document'>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <input class="uk-input" name = "email" #email= "ngModel" type="text" placeholder="email" [(ngModel)] = 'user.email'>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <input class="uk-input" name = "password" #password= "ngModel" type="password" placeholder="Contraseña" [(ngModel)] = 'user.password'>
+                    </div>
+            
+                    <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                        <h6>Role</h6>
+                        <label><input class="uk-radio" type="radio" name="radio2" #role= "ngModel" value="user" [(ngModel)] = 'user.role'>User</label>
+                        <label><input class="uk-radio" type="radio" name="radio2" #role= "ngModel" value="admin" [(ngModel)] = 'user.role'> Admin</label>
+                    </div>
+    
+                    <div class="uk-margin">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Cargar</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" name = "image" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" (change) = 'fileChangeEvent($event)' [(ngModel)] = 'user.image'> 
+                                    <label class="custom-file-label" for="inputGroupFile01">
+                                            {{fileName}}
+                                    </label>                                
+                            </div>
+                        </div>
+                    </div>
+                    <button class="uk-button uk-button-secondary uk-width-1-1" >Guardar</button>
+                </fieldset>
+            </form>        
+    </div>        
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="uk-container">
+            <div id="return">
+                    <h6>Credit Cards/<a routerLink = "/detailUser/{{idUser}}">Return</a></h6>
+            </div>
+        <div *ngIf="credits == 0">
+                <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                    <p>Does not register credit cards</p>
+                    <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" routerLink = "/addCredit/{{idUser}}" >Request Credit Card</button>
+                </div>
+        </div> 
+        
+        <legend class="uk-legend" id="title">{{title}}</legend> 
+        <ul id="ulGeneral">
+                <a *ngFor = 'let credit of credits'>
+                                    <div class="uk-card uk-card-default" id="generalCard">
+                                        <div class="uk-card-body" id="cardBody">
+                                            <ul class="list-group" id="ul">
+                                                    <li class="list-group-item">User: {{credit.userId}}</li>
+                                                    <li class="list-group-item">N card: {{credit.ncard}}</li>
+                                                    <li class="list-group-item">Prestamo: {{credit.expirycard}}</li>
+                                                    <li class="list-group-item">Code CVC: {{credit.codecvc}}</li>
+                                                    <li class="list-group-item">Money: {{credit.money}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" routerLink = "/addCredit/{{idUser}}" >Request Credit Card</button>
+                </a>
+        </ul>    
+    </div>  
+</body>
+</html>

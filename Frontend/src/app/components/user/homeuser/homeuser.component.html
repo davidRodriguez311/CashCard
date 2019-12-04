@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="uk-container">
+        <div *ngIf="users == 0">
+            <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                <p>Does not register Users</p>
+                <button class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" routerLink = "/addUser" >Add Users</button>
+            </div>
+        </div>
+        <ul *ngIf="users != 0" id="ul">
+                <a *ngFor = 'let user of users'>
+                                <div id="containerTarget">
+                                    <div class="uk-card uk-card-default" id="targetUser">
+                                        <div class="uk-card-media-top" id="containerimage">
+                                                <img src="{{url + 'getImage/' + user.image}}" id="img">
+                                        </div>
+                                        <div class="uk-card-body" id="cardBody">
+                                            <h6 class="uk-card-title" id="h4">{{user.name}} {{user.lastname}}</h6>
+                                        </div>
+                                        <div class="uk-card-footer" id="footer">
+                                                <a [routerLink] = "['/detailUser/' + user.id]" class="uk-button uk-button-text">Detalles</a>
+                                        </div> 
+                                    </div>
+                                </div>
+                </a>
+        </ul>        
+</div>
+</body>
+</html>
